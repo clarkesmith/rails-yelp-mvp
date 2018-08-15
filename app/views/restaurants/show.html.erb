@@ -1,0 +1,25 @@
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<%= link_to "Leave review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %> <%= review.rating %></p>
+<% end %>
